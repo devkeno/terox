@@ -4187,3 +4187,7 @@ html {
   position: absolute;
   right: 0;
 }
+
+div[data-radix-aspect-ratio-wrapper] {
+  padding-bottom: 600px!important;
+}
