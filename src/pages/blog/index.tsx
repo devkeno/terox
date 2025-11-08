@@ -9,24 +9,14 @@ import { Testimonials } from '@/components/Testimonials';
 import { Blog } from '@/components/Blog';
 import { ContactForm } from '@/components/ContactForm';
 import { Footer } from '@/components/Footer';
-import { MeetingBooking } from '@/components/MeetingBooking';
+import { BlogSingle } from '@/components/BlogSingle';
 
 export default function Home() {
 
   return (
     <div className="min-h-screen">
       <Navigation />
-
-          <Hero />
-          <WhoWeAre />
-          <Services />
-          <WhyChooseUs />
-          <TechStack />
-          <Partners />
-          <MeetingBooking />
-          <Testimonials />
-          <Blog />
-          <ContactForm />
+    <BlogSingle />
           <Footer />
 
     </div>
