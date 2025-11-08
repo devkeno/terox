@@ -14,7 +14,7 @@ const navLinks = [
   { name: 'Projects', href: '/projects' },
   { name: 'Tech Stack', href: '/#tech' },
   { name: 'Testimonials', href: '/#testimonials' },
-  { name: 'Blog', href: '/#blog' },
+  { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/#contact' },
 ];
 
@@ -73,7 +73,7 @@ export function Navigation() {
               e.preventDefault();
               handleNavigation('/#home');
             }}
-            className="text-xl bg-gradient-to-r from-blue-400 to-[rgb(17,166,148)] bg-clip-text text-transparent font-semibold"
+            className="text-2xl text-white bg-clip-text text-transparent font-semibold"
           >
             Terox Solutions
           </Link>
@@ -130,7 +130,7 @@ export function Navigation() {
             <Button
               size="sm"
               className="w-full bg-[rgb(17,166,148)] hover:bg-[rgb(15,145,130)] text-white"
-              onClick={() => handleNavigation('/#contact')}
+              onClick={() => handleNavigation('/#booking')}
             >
               Get Started
             </Button>

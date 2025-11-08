@@ -1,0 +1,48 @@
+# Disallow specific directories and files
+User-Agent: Baiduspider
+Disallow: /
+
+User-agent: LinkedInBot
+Disallow: /redirect.php
+
+User-agent: *
+Disallow: /_next/
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: /*?preview=true
+Disallow: /*?draft=true
+Disallow: /assets/
+Disallow: /fonts/
+Disallow: /apple-touch-icon-*.png
+Disallow: /favicon.ico
+Disallow: /favicon-*.svg
+Disallow: /next.svg
+Disallow: /vercel.svg
+Disallow: /playback.php
+Disallow: /new_backoffice/playback.php
+Disallow: /p.php
+Disallow: /play.php
+Disallow: /popups/popUpPreview.php
+Disallow: /new_backoffice/
+Disallow: /backoffice/
+Disallow: /v/
+Disallow: /new_backoffice/video_playback.php
+Disallow: /PDF/
+Disallow: /redirect.php
+Disallow: /api/coasttocoast
+Disallow: /feed/
+
+# Allow crawling for everything else
+
+Allow: /
+
+# Sitemap URL
+Sitemap: https://terox-solutions.com/sitemap.xml
+
+# Allow agentic-AI users
+User-agent: Claude-User
+User-agent: ChatGPT-User
+User-agent: Perplexity-User
+Disallow:

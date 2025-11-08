@@ -2,37 +2,13 @@ import { motion } from 'framer-motion';
 import { Card } from './ui/card';
 import { ArrowRight } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-
-const blogPosts = [
-  {
-    title: 'AI in Marketing: The Future is Now',
-    description: 'Discover how artificial intelligence is revolutionizing marketing strategies and customer engagement.',
-    image: 'https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NjIzNDI0NzR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    date: 'November 1, 2025',
-    category: 'AI & Automation',
-  },
-  {
-    title: 'Building with Headless CMS',
-    description: 'Learn why headless CMS architecture is becoming the standard for modern web development.',
-    image: 'https://images.unsplash.com/photo-1676792519027-7c42006d7b4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBkZXZlbG9wbWVudHxlbnwxfHx8fDE3NjIzMDEyMzd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    date: 'October 28, 2025',
-    category: 'Development',
-  },
-  {
-    title: 'The Future of Automation',
-    description: 'Explore how workflow automation is transforming businesses and freeing up time for what matters.',
-    image: 'https://images.unsplash.com/photo-1761195696590-3490ea770aa1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXRvbWF0aW9uJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NjIzNjM5MDd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    date: 'October 25, 2025',
-    category: 'Technology',
-  },
-];
+import { blogPosts } from '@/../data/Articles';
+import Link from 'next/link';
 
 export function Blog() {
   return (
-    <section id="blog" className="py-24 bg-gradient-to-br from-blue-50 via-white to-teal-50/30 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/40 to-[rgb(17,166,148)]/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-[rgb(17,166,148)]/20 to-blue-200/40 rounded-full blur-3xl"></div>
+    <section id="blog" className="py-24 bg-gradient-to-br from-blue-50 to-teal-50 relative overflow-hidden">
+
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <motion.div
@@ -56,7 +32,7 @@ export function Blog() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post, index) => (
+          {blogPosts.slice(0, 3).map((post, index) => (
             <motion.div
               key={post.title}
               initial={{ opacity: 0, y: 30 }}
@@ -91,7 +67,7 @@ export function Blog() {
                     {post.description}
                   </p>
                   <div className="flex items-center text-blue-500 group-hover:text-[rgb(17,166,148)] transition-colors">
-                    <span className="mr-2">Read More</span>
+                    <Link className="mr-2" href={post.link}>Read More</Link>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                   </div>
                 </div>

@@ -34,7 +34,7 @@ const projects = [
     id: 4,
     title: 'B2B Marketplace Platform',
     description: 'Built a robust B2B marketplace connecting suppliers with businesses worldwide. Features include automated order processing, multi-currency support, advanced search filters, and vendor management system.',
-    tech: ['Shopware', 'Storyblok', 'Next.js'],
+    tech: ['Shopware', 'Storybook', 'Next.js'],
     date: 'July 2024',
     image: 'https://images.unsplash.com/photo-1658953229625-aad99d7603b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzYyMzE3NDQ2fDA&ixlib=rb-4.1.0&q=80&w=1080',
   },

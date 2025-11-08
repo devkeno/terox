@@ -108,6 +108,7 @@ export function Hero() {
                   <Button
                     size="lg"
                     className="bg-[rgb(17,166,148)] hover:bg-[rgb(15,145,130)] text-white px-6 sm:px-8 lg:px-10 py-4 sm:py-5 lg:py-6 group shadow-lg shadow-[rgb(17,166,148)]/50 text-sm sm:text-base lg:text-lg"
+                    onClick={() => window.location.href = '/#booking'}
                   >
                     Let's Build Together
                     <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform w-4 h-4 sm:w-5 sm:h-5" />
@@ -116,6 +117,7 @@ export function Hero() {
                     size="lg"
                     variant="outline"
                     className="bg-transparent border-2 border-[rgb(17,166,148)] text-[rgb(17,166,148)] hover:bg-[rgb(17,166,148)]/10 hover:text-white px-6 sm:px-8 lg:px-10 py-4 sm:py-5 lg:py-6 backdrop-blur-sm text-sm sm:text-base lg:text-lg transition-colors duration-300"
+                    onClick={() => window.location.href = '/projects'}
                   >
                     View Our Work
                   </Button>

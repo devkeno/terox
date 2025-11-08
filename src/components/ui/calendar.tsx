@@ -18,28 +18,39 @@ function Calendar({
       showOutsideDays={showOutsideDays}
       className={cn("p-3", className)}
       classNames={{
-        months: "flex flex-col sm:flex-row gap-2",
+        months: " flex-col sm:flex-row relative gap-2",
         month: "flex flex-col gap-4",
         caption: "flex justify-center pt-1 relative items-center w-full",
         caption_label: "text-sm font-medium",
-        nav: "flex items-center gap-1",
+        nav: "flex-col items-start justify-center gap-1",
         nav_button: cn(
           buttonVariants({ variant: "outline" }),
           "size-7 bg-transparent p-0 opacity-50 hover:opacity-100",
         ),
-        nav_button_previous: "absolute left-1",
-        nav_button_next: "absolute right-1",
-        table: "w-full border-collapse space-x-1",
-        head_row: "flex",
+        nav_button_previous: "flex left-1",
+        nav_button_next: "flex right-1",
+
+        /* --------------------------------------------------- */
+        /*  TABLE & ROWS                                      */
+        /* --------------------------------------------------- */
+        table: "w-full border-collapse",
+        head_row: "flex w-full",
         head_cell:
-          "text-muted-foreground rounded-md w-8 font-normal text-[0.8rem]",
+          "flex-1 text-center text-muted-foreground font-medium text-[0.8rem] py-1",
+
         row: "flex w-full mt-2",
         cell: cn(
-          "relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-accent [&:has([aria-selected].day-range-end)]:rounded-r-md",
+          "relative flex-1 p-0 text-center text-sm focus-within:relative focus-within:z-20",
+          "[&:has([aria-selected])]:bg-accent",
+          "[&:has([aria-selected].day-range-end)]:rounded-r-md",
           props.mode === "range"
             ? "[&:has(>.day-range-end)]:rounded-r-md [&:has(>.day-range-start)]:rounded-l-md first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md"
             : "[&:has([aria-selected])]:rounded-md",
         ),
+
+        /* --------------------------------------------------- */
+        /*  DAYS                                              */
+        /* --------------------------------------------------- */
         day: cn(
           buttonVariants({ variant: "ghost" }),
           "size-8 p-0 font-normal aria-selected:opacity-100",
@@ -57,6 +68,7 @@ function Calendar({
         day_range_middle:
           "aria-selected:bg-accent aria-selected:text-accent-foreground",
         day_hidden: "invisible",
+
         ...classNames,
       }}
       components={{
