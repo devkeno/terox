@@ -2,7 +2,9 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Script from "next/script";
 
-export default function App({ Component, pageProps }: AppProps) {<>
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <>
       {/* Google Analytics */}
       <Script
         strategy="afterInteractive"
@@ -21,6 +23,8 @@ export default function App({ Component, pageProps }: AppProps) {<>
             page_path: window.location.pathname,
           });
         `}
-      </Script></>
-  return <Component {...pageProps} />;
+      </Script>
+      <Component {...pageProps} />
+    </>
+  );
 }
