@@ -3,7 +3,7 @@ import { Card } from './ui/card';
 import { ArrowRight, Search, Calendar, Tag } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useState } from 'react';
-import {blogPosts, featuredPost, categories} from '@/../data/Articles';
+import { blogPosts, featuredPost, categories } from '@/../data/Articles';
 import Link from 'next/link';
 
 export function BlogLanding() {
@@ -13,7 +13,7 @@ export function BlogLanding() {
   const filteredPosts = blogPosts.filter(post => {
     const matchesCategory = selectedCategory === 'All Posts' || post.category === selectedCategory;
     const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          post.description.toLowerCase().includes(searchQuery.toLowerCase());
+      post.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
@@ -21,7 +21,7 @@ export function BlogLanding() {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-blue-500">
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-blue-600 to-blue-700 relative overflow-hidden">
-        
+
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -69,9 +69,9 @@ export function BlogLanding() {
             <div className="mb-6">
               <h2 className="text-gray-900">Featured Article</h2>
             </div>
-            <Card 
+            <Link
               className="bg-white border-gray-200 overflow-hidden hover:shadow-2xl hover:border-[rgb(17,166,148)]/30 transition-all duration-300 group cursor-pointer"
-              onClick={() => window.location.hash = '#blog-single'}
+              href={featuredPost.link}
             >
               <div className="grid lg:grid-cols-2 gap-0">
                 <div className="relative overflow-hidden aspect-[16/10] lg:aspect-auto">
@@ -107,7 +107,7 @@ export function BlogLanding() {
                   </div>
                 </div>
               </div>
-            </Card>
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -129,11 +129,10 @@ export function BlogLanding() {
                   <button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`px-4 py-2 rounded-full transition-all duration-300 ${
-                      selectedCategory === category
+                    className={`px-4 py-2 rounded-full transition-all duration-300 ${selectedCategory === category
                         ? 'bg-gradient-to-r from-blue-500 to-[rgb(17,166,148)] text-white shadow-lg'
                         : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-[rgb(17,166,148)]/30'
-                    }`}
+                      }`}
                   >
                     {category}
                   </button>
@@ -149,9 +148,9 @@ export function BlogLanding() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                   >
-                    <Card 
+                    <Link
                       className="bg-white border-gray-200 overflow-hidden hover:shadow-2xl hover:border-[rgb(17,166,148)]/30 transition-all duration-300 group cursor-pointer h-full flex flex-col"
-                      onClick={() => window.location.hash = '#blog-single'}
+                      href={post.link}
                     >
                       <div className="relative overflow-hidden aspect-video">
                         <ImageWithFallback
@@ -186,7 +185,7 @@ export function BlogLanding() {
                           <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                         </div>
                       </div>
-                    </Card>
+                    </Link>
                   </motion.div>
                 ))}
               </div>
@@ -212,7 +211,7 @@ export function BlogLanding() {
               className="lg:col-span-4"
             >
               <div className="sticky top-24 space-y-8">
-          
+
 
                 {/* Categories */}
                 <Card className="p-6 bg-white border-gray-200">
@@ -225,11 +224,10 @@ export function BlogLanding() {
                       <button
                         key={category}
                         onClick={() => setSelectedCategory(category)}
-                        className={`w-full text-left px-4 py-2 rounded-lg transition-all duration-300 ${
-                          selectedCategory === category
+                        className={`w-full text-left px-4 py-2 rounded-lg transition-all duration-300 ${selectedCategory === category
                             ? 'bg-gradient-to-r from-blue-500 to-[rgb(17,166,148)] text-white'
                             : 'text-gray-700 hover:bg-gray-50'
-                        }`}
+                          }`}
                       >
                         {category}
                       </button>

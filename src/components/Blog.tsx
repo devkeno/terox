@@ -40,9 +40,9 @@ export function Blog() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card 
+              <Link 
                 className="bg-white border-gray-200 overflow-hidden hover:shadow-2xl hover:border-[rgb(17,166,148)]/30 transition-all duration-300 group cursor-pointer h-full flex flex-col"
-                onClick={() => window.location.hash = '#blog-single'}
+                href={post.link}
               >
                 <div className="relative overflow-hidden aspect-video">
                   <ImageWithFallback
@@ -67,11 +67,10 @@ export function Blog() {
                     {post.description}
                   </p>
                   <div className="flex items-center text-blue-500 group-hover:text-[rgb(17,166,148)] transition-colors">
-                    <Link className="mr-2" href={post.link}>Read More</Link>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                   </div>
                 </div>
-              </Card>
+              </Link>
             </motion.div>
           ))}
         </div>

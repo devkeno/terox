@@ -5,20 +5,34 @@ import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { blogPosts } from "@/../data/Articles";
+import SeoHead from "./SEO";
 
 export function BlogSingle3() {
   const blogPost = blogPosts[2]; // Featured post
 
   const handleBackToBlog = () => {
-    window.location.hash = "#blog";
+    window.location.hash = `${blogPost.link}`;
   };
 
   const handleContactClick = () => {
-    window.location.hash = "#contact";
+    window.location.hash = "/#contact";
   };
 
   return (
     <div className="min-h-screen bg-white">
+      <SeoHead
+        title="E-commerce Trends 2025 — AI, Sustainability & the Future of Online Shopping"
+        description="Explore the top e-commerce trends of 2025 — from AI-driven personalization and sustainability to social commerce, omnichannel experiences, and next-gen logistics."
+        url="https://terox-solutions.com/blog/ecommerce-trends-2025"
+        image="https://terox-solutions.com/_assets/blog/ecommerce-trends-2025.jpg"
+        type="article"
+        publishedTime="2025-11-10T10:00:00+01:00"
+        modifiedTime="2025-11-10T10:00:00+01:00"
+        author="Terox Solutions"
+        canonical="https://terox-solutions.com/blog/ecommerce-trends-2025"
+        noindex={false}
+      />
+
       {/* HERO SECTION */}
       <section className="relative bg-[#0D0D0F] py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-transparent to-[rgb(17,166,148)]/20"></div>
@@ -116,110 +130,110 @@ export function BlogSingle3() {
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12"
         >
-    <article className="prose lg:prose-lg max-w-none text-gray-700">
+          <article className="prose lg:prose-lg max-w-none text-gray-700">
 
 
-  <h2 className="text-2xl font-semibold mt-10 mb-4">Introduction</h2>
-  <p>
-    The e-commerce landscape continues to evolve rapidly. With new technologies, shifting consumer
-    expectations, and growing competition, online retailers in 2025 must stay agile and innovative.
-    From AI-driven personalization to sustainability and social commerce, here are the key trends
-    shaping the future of online shopping.
-  </p>
+            <h2 className="text-2xl font-semibold mt-10 mb-4">Introduction</h2>
+            <p>
+              The e-commerce landscape continues to evolve rapidly. With new technologies, shifting consumer
+              expectations, and growing competition, online retailers in 2025 must stay agile and innovative.
+              From AI-driven personalization to sustainability and social commerce, here are the key trends
+              shaping the future of online shopping.
+            </p>
 
-  <h2 className="text-2xl font-semibold mt-10 mb-4">1. AI-Driven Personalization</h2>
-  <p>
-    Artificial intelligence is no longer a luxury—it’s a necessity for modern online retailers. In
-    2025, AI tools are powering product recommendations, personalized marketing campaigns, and
-    predictive inventory management. E-commerce platforms are learning from customer behavior in
-    real time to deliver tailor-made experiences that drive conversions.
-  </p>
-  <ul className="list-disc pl-6">
-    <li>Dynamic product recommendations based on browsing history</li>
-    <li>Smart chatbots that handle complex queries</li>
-    <li>Personalized email campaigns with adaptive content</li>
-  </ul>
+            <h2 className="text-2xl font-semibold mt-10 mb-4">1. AI-Driven Personalization</h2>
+            <p>
+              Artificial intelligence is no longer a luxury—it’s a necessity for modern online retailers. In
+              2025, AI tools are powering product recommendations, personalized marketing campaigns, and
+              predictive inventory management. E-commerce platforms are learning from customer behavior in
+              real time to deliver tailor-made experiences that drive conversions.
+            </p>
+            <ul className="list-disc pl-6">
+              <li>Dynamic product recommendations based on browsing history</li>
+              <li>Smart chatbots that handle complex queries</li>
+              <li>Personalized email campaigns with adaptive content</li>
+            </ul>
 
-  <h2 className="text-2xl font-semibold mt-10 mb-4">2. Sustainability and Ethical Shopping</h2>
-  <p>
-    Consumers in 2025 are more environmentally conscious than ever. Shoppers now expect brands to
-    prioritize ethical sourcing, eco-friendly packaging, and transparent supply chains. Businesses
-    that demonstrate real commitment to sustainability will gain customer trust and long-term loyalty.
-  </p>
-  <p>
-    Many retailers are introducing carbon-neutral shipping options and using AI to optimize
-    logistics, reducing waste and emissions. Sustainability has moved from a “nice-to-have” to a
-    business requirement.
-  </p>
+            <h2 className="text-2xl font-semibold mt-10 mb-4">2. Sustainability and Ethical Shopping</h2>
+            <p>
+              Consumers in 2025 are more environmentally conscious than ever. Shoppers now expect brands to
+              prioritize ethical sourcing, eco-friendly packaging, and transparent supply chains. Businesses
+              that demonstrate real commitment to sustainability will gain customer trust and long-term loyalty.
+            </p>
+            <p>
+              Many retailers are introducing carbon-neutral shipping options and using AI to optimize
+              logistics, reducing waste and emissions. Sustainability has moved from a “nice-to-have” to a
+              business requirement.
+            </p>
 
-  <h2 className="text-2xl font-semibold mt-10 mb-4">3. Social Commerce and Live Shopping</h2>
-  <p>
-    Platforms like TikTok, Instagram, and YouTube are becoming major sales channels. Social commerce
-    allows users to discover, review, and purchase products without leaving the app. Live shopping
-    events—where influencers or brand ambassadors present products in real time—are driving high
-    engagement and instant sales.
-  </p>
-  <ul className="list-disc pl-6">
-    <li>Seamless checkout integrations on social platforms</li>
-    <li>Interactive product demos and influencer-hosted live streams</li>
-    <li>Community-driven marketing and authentic storytelling</li>
-  </ul>
+            <h2 className="text-2xl font-semibold mt-10 mb-4">3. Social Commerce and Live Shopping</h2>
+            <p>
+              Platforms like TikTok, Instagram, and YouTube are becoming major sales channels. Social commerce
+              allows users to discover, review, and purchase products without leaving the app. Live shopping
+              events—where influencers or brand ambassadors present products in real time—are driving high
+              engagement and instant sales.
+            </p>
+            <ul className="list-disc pl-6">
+              <li>Seamless checkout integrations on social platforms</li>
+              <li>Interactive product demos and influencer-hosted live streams</li>
+              <li>Community-driven marketing and authentic storytelling</li>
+            </ul>
 
-  <h2 className="text-2xl font-semibold mt-10 mb-4">4. Subscription and Loyalty Models</h2>
-  <p>
-    Subscription-based e-commerce continues to grow. From curated monthly boxes to automatic
-    reorders for household items, these models offer predictable revenue for brands and convenience
-    for customers. In parallel, loyalty programs are evolving with gamification and rewards that go
-    beyond discounts.
-  </p>
-  <p>
-    Customers now expect personalized loyalty experiences—such as early access to new products,
-    birthday perks, or points for social engagement.
-  </p>
+            <h2 className="text-2xl font-semibold mt-10 mb-4">4. Subscription and Loyalty Models</h2>
+            <p>
+              Subscription-based e-commerce continues to grow. From curated monthly boxes to automatic
+              reorders for household items, these models offer predictable revenue for brands and convenience
+              for customers. In parallel, loyalty programs are evolving with gamification and rewards that go
+              beyond discounts.
+            </p>
+            <p>
+              Customers now expect personalized loyalty experiences—such as early access to new products,
+              birthday perks, or points for social engagement.
+            </p>
 
-  <h2 className="text-2xl font-semibold mt-10 mb-4">5. Omnichannel and Hybrid Experiences</h2>
-  <p>
-    The line between online and offline shopping continues to blur. Click-and-collect options,
-    virtual try-ons, and AR-powered product previews are making e-commerce more immersive. Retailers
-    who integrate digital and physical experiences provide the seamless convenience that customers
-    crave.
-  </p>
-  <ul className="list-disc pl-6">
-    <li>AR tools for furniture and fashion visualization</li>
-    <li>In-store kiosks for online order pickups</li>
-    <li>Unified customer data across all sales channels</li>
-  </ul>
+            <h2 className="text-2xl font-semibold mt-10 mb-4">5. Omnichannel and Hybrid Experiences</h2>
+            <p>
+              The line between online and offline shopping continues to blur. Click-and-collect options,
+              virtual try-ons, and AR-powered product previews are making e-commerce more immersive. Retailers
+              who integrate digital and physical experiences provide the seamless convenience that customers
+              crave.
+            </p>
+            <ul className="list-disc pl-6">
+              <li>AR tools for furniture and fashion visualization</li>
+              <li>In-store kiosks for online order pickups</li>
+              <li>Unified customer data across all sales channels</li>
+            </ul>
 
-  <h2 className="text-2xl font-semibold mt-10 mb-4">6. Faster, Smarter Logistics</h2>
-  <p>
-    Delivery expectations keep rising. In 2025, consumers want same-day or even one-hour deliveries.
-    To meet these demands, retailers are investing in AI-driven inventory systems, local fulfillment
-    hubs, and drone delivery pilots.
-  </p>
-  <p>
-    Automation in logistics not only speeds up operations but also reduces errors and costs—key for
-    maintaining margins in a competitive marketplace.
-  </p>
+            <h2 className="text-2xl font-semibold mt-10 mb-4">6. Faster, Smarter Logistics</h2>
+            <p>
+              Delivery expectations keep rising. In 2025, consumers want same-day or even one-hour deliveries.
+              To meet these demands, retailers are investing in AI-driven inventory systems, local fulfillment
+              hubs, and drone delivery pilots.
+            </p>
+            <p>
+              Automation in logistics not only speeds up operations but also reduces errors and costs—key for
+              maintaining margins in a competitive marketplace.
+            </p>
 
-  <h2 className="text-2xl font-semibold mt-10 mb-4">7. The Rise of Voice and Visual Search</h2>
-  <p>
-    With the widespread use of smart speakers and visual recognition technology, voice and visual
-    search are becoming integral to online shopping. Customers can now say or show what they want—and
-    get instant, accurate results.
-  </p>
-  <p>
-    Optimizing product data for these search methods is crucial for visibility and conversions in the
-    next generation of e-commerce.
-  </p>
+            <h2 className="text-2xl font-semibold mt-10 mb-4">7. The Rise of Voice and Visual Search</h2>
+            <p>
+              With the widespread use of smart speakers and visual recognition technology, voice and visual
+              search are becoming integral to online shopping. Customers can now say or show what they want—and
+              get instant, accurate results.
+            </p>
+            <p>
+              Optimizing product data for these search methods is crucial for visibility and conversions in the
+              next generation of e-commerce.
+            </p>
 
-  <h2 className="text-2xl font-semibold mt-10 mb-4">Conclusion</h2>
-  <p>
-    The e-commerce industry in 2025 is fast, intelligent, and customer-centric. Retailers that
-    embrace AI, sustainability, and innovative shopping experiences will lead the market. The brands
-    that thrive won’t just sell products—they’ll build lasting, trusted relationships with their
-    customers through authenticity and innovation.
-  </p>
-</article>
+            <h2 className="text-2xl font-semibold mt-10 mb-4">Conclusion</h2>
+            <p>
+              The e-commerce industry in 2025 is fast, intelligent, and customer-centric. Retailers that
+              embrace AI, sustainability, and innovative shopping experiences will lead the market. The brands
+              that thrive won’t just sell products—they’ll build lasting, trusted relationships with their
+              customers through authenticity and innovation.
+            </p>
+          </article>
 
 
 
