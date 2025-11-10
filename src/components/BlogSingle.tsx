@@ -41,7 +41,7 @@ export function BlogSingle() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-                onClick={() => window.location.href = blogPost.link}
+            onClick={() => window.location.href = blogPost.link}
             className="flex items-center gap-2 text-gray-400 hover:text-[rgb(17,166,148)] transition-colors mb-8 group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -278,7 +278,8 @@ export function BlogSingle() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="bg-white border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer h-full flex flex-col">
+                <Card onClick={() => window.location.href = post.link}
+                  className="bg-white border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer h-full flex flex-col">
                   <div className="relative overflow-hidden aspect-video">
                     <ImageWithFallback
                       src={post.image}

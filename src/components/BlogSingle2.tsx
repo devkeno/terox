@@ -270,7 +270,7 @@ export function BlogSingle2() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="bg-white border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer h-full flex flex-col">
+                <Card onClick={() => window.location.href = post.link} className="bg-white border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer h-full flex flex-col">
                   <div className="relative overflow-hidden aspect-video">
                     <ImageWithFallback
                       src={post.image}

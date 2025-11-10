@@ -181,7 +181,7 @@ export function BlogLanding() {
                           {post.description}
                         </p>
                         <div className="flex items-center text-blue-500 group-hover:text-[rgb(17,166,148)] transition-colors">
-                          <Link className="mr-2" href={post.link}>Read More</Link>
+                          <span className="mr-2" >Read More</span>
                           <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                         </div>
                       </div>
