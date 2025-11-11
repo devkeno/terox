@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-
 const technologies = [
   { name: 'AI Development', color: '/assets/AI.png' },
   { name: 'Next.js', color: '/assets/Next.js.svg' },
@@ -15,11 +14,24 @@ const technologies = [
   { name: 'Shopware', color: '/assets/Shopware.svg' },
   { name: 'Node.js', color: '/assets/Node.js.svg' },
   { name: 'Sanity', color: '/assets/Sanity.svg' },
-
-
 ];
 
 export function TechStack() {
+  // Variants for staggered child animation
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.05,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
   return (
     <section id="tech" className="py-24 bg-[#0D0D0F] relative overflow-hidden">
       {/* Background elements */}
@@ -28,6 +40,7 @@ export function TechStack() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+        {/* Section title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -43,29 +56,32 @@ export function TechStack() {
           </p>
         </motion.div>
 
+        {/* Tech grid with staggered animation */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
         >
-          {technologies.map((tech, index) => (
+          {technologies.map((tech) => (
             <motion.div
               key={tech.name}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
+              variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center hover:bg-white/10 transition-all duration-300 cursor-default"
             >
-              <div className={`w-12 h-12 bg-gradient-to-br  rounded-lg mx-auto mb-4 flex items-center justify-center shadow-lg`}>
-                <Image src={tech.color} alt={tech.name} width={44} height={44} />
+              <div className="w-12 h-12 bg-gradient-to-br rounded-lg mx-auto mb-4 flex items-center justify-center shadow-lg">
+                <Image
+                  src={tech.color}
+                  alt={tech.name}
+                  width={44}
+                  height={44}
+                  placeholder="blur"
+                  blurDataURL={tech.color} // Optional, uses same image for placeholder
+                />
               </div>
-              <p className="text-white">
-                {tech.name}
-              </p>
+              <p className="text-white">{tech.name}</p>
             </motion.div>
           ))}
         </motion.div>
